@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bambus's projects.</title>
+    <script type="module" crossorigin src="./assets/index.c6e042ae.js"></script>
+
+</head>
+
+<body class="dark">
+    <h1>My projects :D</h1>
+    <br>
+    </p>
+    <br>
+    <div class="yeah">
+        <a href="https://github.com/baambuus/95Gen">95Gen</a>
+        <p>A Windows 95 key generator.</p>
+    </div>
+    <div class="ok">
+        <a href="https://baambuus.github.io/screenrec">epik skreen recorder!!11 </a>
+        <p>A JavaScript screen recorder.</p>
+    </div>
+    <h1>more coming soon...</h1>
+
+    <div class="animated-background"></div>
+    <div class="animated-background"></div>
+
+</body>
+<script src="animatedLines.js"></script>
+<style>
+    a {
+        font-size: 35px;
+        color: rgb(185, 185, 185);
+        text-decoration: none;
+    }
+    
+    a:hover {
+        color: #757575;
+    }
+    
+    a:active {
+        color: black;
+    }
+    
+    body {
+        --color-bg: #0e0e0f;
+        --color-bg-2: #00183b;
+        --color-bg-3: #800180;
+        --gradient-margin: 800px;
+        font-family: 'Consolas', monospace;
+        color: white
+    }
+    
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
+    
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    p {
+        font-size: 20px;
+    }
+    
+    .animated-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% + var(--gradient-margin));
+        background: radial-gradient( ellipse at 500% 0%, var(--color-bg) 50%, var(--color-bg-2) 80%, var(--color-bg-3) 100%);
+        z-index: -1;
+        transform: translateY(calc(var(--gradient-margin) * -1));
+    }
+</style>
+
+</html>

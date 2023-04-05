@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" href="famicon.png">
+    <title>epik skren rekorder!!11</title>
+    <style>
+        /*If someone knows how to make CSS not be painful pls teach me */
+        
+        body {
+            font-family: Consolas, monospace;
+            background: linear-gradient(to right, #3494e6, #ec6ead);
+            /*thanks uigradients.com ╰(*°▽°*)╯ */
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        button {
+            font-family: Consolas, monospace;
+            padding: 10px 20px;
+            background-color: #0066ff;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 auto;
+            display: block
+        }
+        
+        button:disabled {
+            background-color: #E0E0E0;
+            color: #BDBDBD;
+            cursor: default;
+        }
+        
+        video {
+            border-radius: 50px;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        p {
+            text-align: center;
+        }
+        
+        a {
+            color: #0066ff
+        }
+        
+        a:hover {
+            color: #0044aa
+        }
+        
+        a:active {
+            color: black
+        }
+    </style>
+</head>
+
+<body>
+    <h1>epic screen recorder lol</h1>
+    <hr>
+    <p>just a lil js project. there r prolly some intentional bugs built in (im definitely not too lazy to debug them). anyways <a href="https://obsproject.com">please use OBS.</a> </p>
+    <br>
+
+    <button id="startButton">Start Recording</button>
+    <br>
+    <br>
+    <button id="stopButton" disabled>Stop Recording</button>
+    <!--this button doesn't work btw-->
+    <video id="preview" width="640" height="480" autoplay></video>
+    <script>
+        //THE FUCKING JS STARTS OH NO
+        const startButton = document.getElementById("startButton");
+        const stopButton = document.getElementById("stopButton");
+        const preview = document.getElementById("preview");
+        let mediaRecorder;
+        let recordedChunks = [];
+        async function handleStartRecording() {
+            try {
+                const stream = await navigator.mediaDevices.getDisplayMedia();
+                mediaRecorder = new MediaRecorder(stream, {
+                    mimeType: "video/webm",
+                });
+                mediaRecorder.ondataavailable = handleDataAvailable;
+                mediaRecorder.onstop = handleStopRecording;
+                preview.srcObject = stream;
+                preview.captureStream = preview.captureStream || preview.mozCaptureStream;
+                await preview.play();
+                mediaRecorder.start();
+                startButton.disabled = true;
+                stopButton.disabled = false;
+            } catch (error) {
+                console.error(`getDisplayMedia() error: ${error}`);
+            }
+        }
+
+        function handleDataAvailable(event) {
+            if (event.data.size > 0) {
+                recordedChunks.push(event.data);
+            }
+        }
+
+        function handleStopRecording() {
+            const blob = new Blob(recordedChunks, {
+                type: "video/webm",
+            });
+            const url = URL.createObjectURL(blob); //i spent so fucking long on this thank you stackoverflow
+            const a = document.createElement("a");
+            document.body.appendChild(a);
+            a.style.display = "none";
+            a.href = url;
+            a.download = "rec.webm";
+            a.click();
+            window.URL.revokeObjectURL(url);
+            recordedChunks = [];
+            startButton.disabled = false;
+            stopButton.disabled = true;
+        }
+        startButton.addEventListener("click", handleStartRecording);
+        stopButton.addEventListener("click", () => {
+            mediaRecorder.stop();
+            startButton.disabled = false;
+            stopButton.disabled = true;
+        });
+    </script>
+</body>
+
+</html>
