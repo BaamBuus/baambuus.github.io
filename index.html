@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hi, I'm Bambus.</title>
+    <script type="module" crossorigin src="./assets/index.c6e042ae.js"></script>
+
+</head>
+
+<body class="dark">
+    <h1>Hi, I'm Bambus.</h1>
+    <br>
+    <p>I'm a 13 year old tech hobbyist. I'm learning web development. You can check out my projects
+        <a href="https://bambus.pages.dev/projects">here.</a>
+    </p>
+    <br>
+    <p>You can also check out my social medias <a href="https://bambus.pages.dev/links">here.</a></P>
+    <div class="animated-background"></div>
+
+</body>
+<script src="animatedLines.js"></script>
+<style>
+    a {
+        color: rgb(185, 185, 185);
+        text-decoration: none;
+    }
+    
+    a:hover {
+        color: #757575;
+    }
+    
+    a:active {
+        color: black;
+    }
+    
+    body {
+        --color-bg: #0e0e0f;
+        --color-bg-2: #141414;
+        --color-bg-3: #800180;
+        --gradient-margin: 800px;
+        font-family: 'Consolas', monospace;
+        color: white
+    }
+    
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
+    
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    p {
+        font-size: 20px;
+    }
+    
+    .animated-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% + var(--gradient-margin));
+        background: radial-gradient( ellipse at 500% 0%, var(--color-bg) 50%, var(--color-bg-2) 80%, var(--color-bg-3) 100%);
+        z-index: -1;
+        transform: translateY(calc(var(--gradient-margin) * -1));
+    }
+</style>
+
+</html>

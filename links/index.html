@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bambus's links.</title>
+    <script type="module" crossorigin src="./assets/index.c6e042ae.js"></script>
+
+</head>
+
+<body class="dark">
+    <h1>My links :D</h1>
+    <br>
+    <div class="yeah">
+        <a href="https://tiktok.com/@bambus.png">TikTok </a> <img src="tiktok.svg"></div>
+    <div class="ok">
+        <a href="https://youtube.com/@bammbus">YouTube </a> <img src="youtube.svg"></div>
+    <div class="ohrgk">
+        <a href="https://github.com/baambuus">GitHub </a> <img src="github.svg"></div>
+
+    <div class="animated-background"></div>
+
+</body>
+<script src="animatedLines.js"></script>
+<style>
+    img {
+        width: 32px;
+        height: 32px;
+    }
+    
+    p {
+        font-size: 20px;
+    }
+    
+    a {
+        font-size: 25px;
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+    }
+    
+    a:hover {
+        color: #757575;
+    }
+    
+    a:active {
+        color: black;
+    }
+    
+    body {
+        --color-bg: #0e0e0f;
+        --color-bg-2: #240042;
+        --color-bg-3: #800180;
+        --gradient-margin: 800px;
+        font-family: 'Consolas', monospace;
+        color: white
+    }
+    
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
+    
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .animated-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% + var(--gradient-margin));
+        background: radial-gradient( ellipse at 500% 0%, var(--color-bg) 50%, var(--color-bg-2) 80%, var(--color-bg-3) 100%);
+        z-index: -1;
+        transform: translateY(calc(var(--gradient-margin) * -1));
+    }
+</style>
+
+</html>
