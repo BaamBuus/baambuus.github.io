@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Gradient Maker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Grado - CSS gradient maker</h1>
+    <p>This tool is for lazy people like me, and you who don't want to go out experimenting CSS gradients. Grado is has a lazy but sleek design which is easy-to-use. </p>
+    <div id="preview"></div>
+    <div id="controls">
+        <div>
+            <b>
+            <label>Start Color:</label>
+            <input type="color" id="start-color" class="ok">
+        </div>
+        <div>
+            <label>End Color:</label>
+            <input type="color" id="end-color" class="ok">
+        </b>
+        </div>
+        <div>
+            <b> <label>Direction:</label></b>
+            <select id="direction" class="ok">
+                <option>Select a direction.</option>
+                <option value="to right">⬅️ to ➡️</option>
+                <option value="to left">➡️ to ⬅️</option>
+                <option value="to bottom">⬆️ to ⬇️</option>
+                <option value="to top">⬇️ to ⬆️</option>
+                <option value="to bottom right">↖️ to ↘️</option>
+                <option value="to top left">↘️ to Top ↖️</option>
+                <option value="to bottom left">↗️ to ↙️</option>
+                <option value="to top right">↙️ to ↗️</option>
+            </select>
+        </div>
+        <button id="generate-btn" class="ok">Generate CSS</button>
+    </div>
+    <div class="css-code">
+        <textarea id="css-code" rows="10" cols="50" placeholder="CSS code will appear here" readonly></textarea>
+    </div>
+    <script src="script.js" type="text/javascript"></script>
+    <footer>
+        <a href="https://bambus.lol">Made by Bambus - bambus.lol</a>
+    </footer>
+</body>
+
+</html>
